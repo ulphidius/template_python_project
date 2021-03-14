@@ -11,6 +11,7 @@ setup(
     description='Template test for python bin',
     long_description=CONTENT_README,
     long_description_content_type='text/markdown',
+    licence='MIT',
     packages=find_packages(),
     install_requires=['click'],
     entry_points='''
