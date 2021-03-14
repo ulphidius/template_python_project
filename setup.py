@@ -5,7 +5,7 @@ with open('README.md', 'r') as readme:
 
 setup(
     name='template_python_project',
-    version='0.2.0',
+    version='0.2.1',
     author='ulphidius',
     url='https://github.com/ulphidius/template_python_project',
     description='Template test for python bin',
@@ -16,6 +16,6 @@ setup(
     install_requires=['click'],
     entry_points='''
         [console_scripts]
-        template_python_project=template_python_project.main:main 
+        template-python-project=template_python_project.main:main 
     '''
 )

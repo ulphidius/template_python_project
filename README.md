@@ -11,7 +11,7 @@ For install this app you need to have **setuptools** in your python environment.
 # We assume that pip is install and is connected to python 3
 pip install --editable .
 # OR
-pip install template_python_project
+pip install template-python-project
 ```
 
 ## Use
@@ -19,7 +19,7 @@ pip install template_python_project
 For further information use *--help* option.
 
 ```sh
-template_python_project --compute-type MUL --first 1 --second 2
+template-python-project --compute-type MUL --first 1 --second 2
 ```
 
 ## Deploy
