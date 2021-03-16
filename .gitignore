@@ -1,5 +1,6 @@
 *.egg*
 __pycache__
+.vscode
 build
 dist
 log
