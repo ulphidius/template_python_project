@@ -10,6 +10,7 @@ LOGGER = None
 @click.option('--first', '-f', required=True, help='First number to handle')
 @click.option('--second', '-s', required=True, help='Second number to handle')
 @click.option('--log-path', '-l', default=None, help='Path where log files are stored')
+@click.version_option()
 def main(compute_type, first, second, log_path):
     global LOGGER
 
