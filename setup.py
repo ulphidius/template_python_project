@@ -1,21 +1,3 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-with open('README.md', 'r') as readme:
-    CONTENT_README = readme.read()
-
-setup(
-    name='template_python_project',
-    version='0.2.1',
-    author='ulphidius',
-    url='https://github.com/ulphidius/template_python_project',
-    description='Template test for python bin',
-    long_description=CONTENT_README,
-    long_description_content_type='text/markdown',
-    licence='MIT',
-    packages=find_packages(),
-    install_requires=['click'],
-    entry_points='''
-        [console_scripts]
-        template-python-project=template_python_project.main:main 
-    '''
-)
+setup()
