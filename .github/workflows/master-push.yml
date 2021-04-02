@@ -33,3 +33,9 @@ jobs:
     - name: Start tests
       run: |
         pytest ./tests
+    
+    - name: Publish test coverage
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      run: |
+        pytest --cov=template_python_project tests/

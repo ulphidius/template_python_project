@@ -1,5 +1,8 @@
 # template_python_project
 
+[![master](https://github.com/ulphidius/template_python_project/actions/workflows/master-push.yml/badge.svg?branch=master)](https://github.com/ulphidius/template_python_project/actions/workflows/master-push.yml) [![Coverage Status](https://coveralls.io/repos/github/ulphidius/template_python_project/badge.svg?branch=master)](https://coveralls.io/github/ulphidius/template_python_project?branch=master)
+
+
 This is a sample application for test deployment on pypi.
 You can use it as reference but **i don't recommend its use**.
 
