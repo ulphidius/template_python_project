@@ -39,3 +39,4 @@ jobs:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       run: |
         pytest --cov=template_python_project tests/
+        coveralls
