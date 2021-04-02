@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  lint/test:
+  lint_test:
     runs-on: ubuntu-latest
 
     steps:
