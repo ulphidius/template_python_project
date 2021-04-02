@@ -12,6 +12,9 @@ For install this app you need to have **setuptools** in your python environment.
 pip install --editable .
 # OR
 pip install template-python-project
+
+# For install the project with development tool
+pip install --editable ".[development]"
 ```
 
 ## Use
@@ -20,6 +23,16 @@ For further information use *--help* option.
 
 ```sh
 template-python-project --compute-type MUL --first 1 --second 2
+```
+
+## Test
+
+This applciation use the test framework **pytest**.
+**pytest** is installed with development tools.
+
+```sh
+# For execute tests we assume that the development dependencies are install
+pytest ./test
 ```
 
 ## Deploy
