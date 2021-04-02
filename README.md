@@ -24,6 +24,15 @@ For further information use *--help* option.
 ```sh
 template-python-project --compute-type MUL --first 1 --second 2
 ```
+## Linter
+
+This application use the linter **pylint**.
+**pylint** is installed with development tools.
+
+```sh
+# For execute tests we assume that the development dependencies are install
+pylint template_python_project
+```
 
 ## Test
 
