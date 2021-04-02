@@ -8,7 +8,7 @@ def test_add():
     
     assert 4 == int(result.output)
 
-def test_add():
+def test_mul():
     runner = CliRunner()
     result = runner.invoke(main, ['--compute-type', 'MUL', '--first', '2', '--second', '2'])
     

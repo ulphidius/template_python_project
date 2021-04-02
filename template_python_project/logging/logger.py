@@ -64,7 +64,7 @@ def init_logger(level, path = None):
         datefmt='%Y-%m-%d %I:%M:%S %p'
     )
 
-    if isinstance(handlers):
+    if isinstance(handlers, list):
         for handler in handlers:
             handler.setLevel(level)
             handler.setFormatter(formater)
