@@ -1,35 +1,13 @@
-# pylint: disable=global-statement
-# pylint: disable=missing-module-docstring
-# pylint: disable=missing-function-docstring
+# pylint: disable=too-many-arguments
 
 from logging import DEBUG, INFO, WARNING, ERROR, getLogger
 import click
-from .core import compute
+from .core import compute, concat
 from .logging import logger
 
 LOGGER = None
 
-@click.command()
-@click.option(
-    '--compute-type',
-    '-c',
-    required=True,
-    type=click.Choice(['ADD', 'MUL'], case_sensitive=True)
-) # pylint: disable=too-many-arguments
-@click.option(
-    '--first',
-    '-f',
-    required=True,
-    type=int,
-    help='First number to handle'
-)
-@click.option(
-    '--second',
-    '-s',
-    required=True,
-    type=int,
-    help='Second number to handle'
-)
+@click.group()
 @click.option(
     '--log-path',
     '-l',
@@ -51,7 +29,7 @@ and the second verbose option activate the debug notifications
 (Conflict with the quiet option)"""
 )
 @click.version_option()
-def main(compute_type, first, second, log_path, quiet, verbose):
+def main(log_path, quiet, verbose):
     global LOGGER
 
     if quiet and verbose > 0:
@@ -71,6 +49,35 @@ def main(compute_type, first, second, log_path, quiet, verbose):
 
     LOGGER = getLogger(__name__.split('.')[0])
 
+    main.add_command(compute_command)
+    main.add_command(concat_command)
+
+@main.command(
+    name='compute',
+    help='Apply a mathematical operation on 2 values'
+)
+@click.option(
+    '--compute-type',
+    '-c',
+    required=True,
+    type=click.Choice(['ADD', 'MUL'], case_sensitive=True)
+)
+@click.option(
+    '--first',
+    '-f',
+    required=True,
+    type=int,
+    help='First number to handle'
+)
+@click.option(
+    '--second',
+    '-s',
+    required=True,
+    type=int,
+    help='Second number to handle'
+)
+@click.help_option()
+def compute_command(compute_type, first, second):
     if compute_type == 'ADD':
         LOGGER.info('Add function call')
         print(compute.add(int(first), int(second)))
@@ -78,3 +85,25 @@ def main(compute_type, first, second, log_path, quiet, verbose):
     elif compute_type == 'MUL':
         LOGGER.info('Mul function call')
         print(compute.multiply(int(first), int(second)))
+
+@main.command(
+    name='concat',
+    help='Command for append 2 strings with a space as separator'
+)
+@click.option(
+    '--first',
+    '-f',
+    required=True,
+    type=str,
+    help='First string to handle'
+)
+@click.option(
+    '--second',
+    '-s',
+    required=True,
+    type=str,
+    help='Second string to handle'
+)
+@click.help_option()
+def concat_command(first, second):
+    print(concat.concat(first, second))

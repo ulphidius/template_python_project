@@ -1,6 +1,4 @@
-# pylint: disable=no-value-for-parameter
-# pylint: disable=missing-module-docstring
-# pylint: disable=missing-function-docstring
+# pylint: skip-file
 
 from . import main
 
