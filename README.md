@@ -25,7 +25,8 @@ pip install --editable ".[development]"
 For further information use *--help* option.
 
 ```sh
-template-python-project --compute-type MUL --first 1 --second 2
+template-python-project compute --compute-type MUL --first 1 --second 2
+template-python-project concat --first hello --second world
 ```
 ## Linter
 
